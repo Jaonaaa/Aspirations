@@ -7,12 +7,15 @@ $this->load->helper("url");
 
 <head>
     <meta charset="utf-8">
-    <title>Welcome to CodeIgniter</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>style.css">
 </head>
 
 <body>
 
-    Hello dude
+    <form action="<?php echo base_url(); ?>Login/goHome" method="post">
+        <button>Go Home</button>
+    </form>
 </body>
 
 </html>

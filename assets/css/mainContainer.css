@@ -1,0 +1,9 @@
+/* Main-Container */
+#main-container {
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 0.5rem;
+  height: 10rem;
+  transition: all 0.2s ease-in-out;
+  background-color: rgb(255, 135, 135);
+}
