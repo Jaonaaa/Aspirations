@@ -14,6 +14,8 @@ $this->load->helper("url");
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/font/fontawesome-5/css/all.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/sideNavbar.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/mainContainer.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/paper.css">
+
 
 </head>
 <style>
@@ -29,12 +31,13 @@ $this->load->helper("url");
         <div id="header">
             <div id="logo"><img src="<?php echo base_url(); ?>assets/img/logo/logo.png" alt="logo"></div>
             <div class="search-bar">
-                <input type="text" placeholder="Recherche">
+                <input type="text" placeholder="Rechercher une tache">
                 <div class="icon-search"><i class="fas fa-search"></i></div>
             </div>
             <div id="params">
                 <div id="parameter-box">
                     <div class="icon-parameter"> <i class="fas fa-bell"></i> </div>
+                    <div class="icon-parameter"> <i class="fas fa-cog"></i> </div>
                 </div>
                 <div id="users-box">
                     <div class="avatar-box"> <img src="<?php echo base_url(); ?>assets/img/logo/logo.png" alt="avatar">
@@ -42,25 +45,36 @@ $this->load->helper("url");
                     <div class="user-name">Peter Parker Samy Stephen</div>
                 </div>
             </div>
+            <div id="bars-menu" class="selected-bars">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
         <!-- /// -->
         <div id="rows-tickets"></div>
         <!-- -->
         <div id="structure">
-            <div id="navbar-left" class="full-nav">
-                <div class="row-nav">
-                    <div class="top-content-row">
-                        <div class="icon-nav"> <i class="fas fa-tree"></i> </div>
-                        <div class="text-nav">Mes taches</div>
-                        <div class="dropdown-icon"><i class="fas fa-caret-down"></i></div>
+            <div id="main-container">
+                <div class="head-section">
+                    <div class="title-section">Mes taches</div>
+                    <div class="support-section">
+                        <div class="name-support">Filtrer</div>
+                        <div class="icon-support icon-parameter"> <i class="fas fa-filter"></i> </div>
                     </div>
-                    <div class="under-content-row"></div>
                 </div>
 
             </div>
-            <div id="main-container"></div>
+
+        </div>
+        <div id="btn-add-something">
+            <div class="plus"></div>
         </div>
     </div>
 </body>
+<script src="<?php echo base_url(); ?>assets/js/paper.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/structure.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/search.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/sideNavbar.js"></script>
 
 </html>
