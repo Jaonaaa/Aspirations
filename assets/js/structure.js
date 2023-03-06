@@ -96,10 +96,12 @@ function getBtnSomething(btnSomething) {
   let topBtn = btnSomething.getBoundingClientRect().top;
   let btnsData = [
     {
-      icon: "fas fa-paper-plane",
+      target: "idk",
+      icon: "fas fa-bug",
     },
     {
-      icon: "fas fa-bug",
+      target: "task-paper",
+      icon: "fas fa-paper-plane",
     },
   ];
   let transformY = 4;
@@ -111,7 +113,10 @@ function getBtnSomething(btnSomething) {
     root.appendChild(btnElement);
     //
     btnElement.addEventListener("click", () => {
-      console.log(btn.icon);
+      console.log(btn);
+      if (btn.target == "task-paper") {
+        createPaperTask();
+      }
     });
     //
     setTimeout(() => {

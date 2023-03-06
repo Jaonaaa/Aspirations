@@ -79,14 +79,13 @@ $this->load->helper("url");
             <div class="plus"></div>
         </div>
     </div>
-    <div id="paper-textarea">
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-    </div>
+
 </body>
-<script src="<?php echo base_url(); ?>assets/js/paper.js"></script>
+<script src=" <?php echo base_url(); ?>assets/js/paper.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/hider.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/structure.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/search.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/paperTask.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/task.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/sideNavbar.js"></script>
 
