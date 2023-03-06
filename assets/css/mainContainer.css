@@ -3,9 +3,18 @@
   width: 100%;
   box-sizing: border-box;
   margin-left: 0.5rem;
-  height: 10rem;
   transition: all 0.2s ease-in-out;
   /* background-color: rgba(255, 135, 135, 0.579); */
+}
+#data-container {
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#data-container::-webkit-scrollbar {
+  /* display: none; */
 }
 .head-section {
   font-family: Poppins;
@@ -43,4 +52,50 @@
 }
 .icon-support:hover {
   background-color: var(--theme-two-hovered);
+}
+
+.section-container {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Poppins;
+  margin-bottom: 2rem;
+}
+.title-section-about {
+  font-size: 1rem;
+  color: grey;
+  padding: 0.7rem 1%;
+  color: var(--theme-one);
+  font-weight: bolder;
+}
+
+.container-section {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 968px) {
+  .title-section {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .title-section {
+    font-size: 1.1rem;
+  }
+  .head-section {
+    padding-bottom: 0.6rem;
+  }
+  .support-section {
+    margin-right: 0.5rem;
+  }
+  .support-section .name-support {
+    font-size: 0.8rem;
+  }
+  .support-section .icon-support {
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.33rem;
+  }
 }

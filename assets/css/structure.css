@@ -6,6 +6,11 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
@@ -17,7 +22,7 @@ body {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 0 0.5rem 3rem 0rem;
+  padding: 0 0rem 3rem 0rem;
 }
 #header {
   display: flex;
@@ -151,6 +156,7 @@ input::placeholder {
 #btn-add-something {
   position: fixed;
   right: 5%;
+  z-index: 4;
   bottom: 7%;
   width: 3.5rem;
   height: 3.5rem;
@@ -204,6 +210,7 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
   width: 3rem;
   cursor: pointer;
   transform: translateY(0);
@@ -328,9 +335,12 @@ input::placeholder {
 }
 @media screen and (max-width: 600px) {
   .search-bar input:focus {
-    width: 13rem;
+    width: 12rem;
+  }
+  .search-bar input {
+    width: 11rem;
   }
   .search-bar-focused {
-    width: 13rem;
+    width: 11rem;
   }
 }

@@ -12,6 +12,8 @@
 
 .full-nav {
   width: 18rem;
+  transition: all 0.31s ease-in-out;
+  border-right: 0px solid rgba(180, 180, 180, 0.419);
 }
 .small-nav {
   border-right: 1px solid rgba(180, 180, 180, 0.419);
@@ -184,4 +186,14 @@
 }
 .small-nav .dropdown-icon {
   display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  #navbar-left {
+    width: 0 !important;
+    overflow: hidden;
+  }
+  .small-nav {
+    margin-right: 0;
+  }
 }

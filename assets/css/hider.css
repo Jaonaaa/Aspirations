@@ -1,0 +1,8 @@
+#hider {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.354);
+  position: fixed;
+  z-index: 3;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}

@@ -15,13 +15,19 @@ $this->load->helper("url");
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/sideNavbar.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/mainContainer.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/paper.css">
-
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/task.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/hider.css">
 
 </head>
 <style>
     @font-face {
         font-family: Poppins;
         src: url(<?php echo base_url(); ?>assets/font/Poppins/Poppins-Light.ttf);
+    }
+
+    @font-face {
+        font-family: Dancing;
+        src: url(<?php echo base_url(); ?>assets/font/Dancing/DancingScript-Regular.ttf);
     }
 </style>
 
@@ -42,10 +48,10 @@ $this->load->helper("url");
                 <div id="users-box">
                     <div class="avatar-box"> <img src="<?php echo base_url(); ?>assets/img/logo/logo.png" alt="avatar">
                     </div>
-                    <div class="user-name">Peter Parker Samy Stephen</div>
+                    <div class="user-name">Peter Parker Samy </div>
                 </div>
             </div>
-            <div id="bars-menu" class="selected-bars">
+            <div id="bars-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -63,7 +69,9 @@ $this->load->helper("url");
                         <div class="icon-support icon-parameter"> <i class="fas fa-filter"></i> </div>
                     </div>
                 </div>
+                <div id="data-container">
 
+                </div>
             </div>
 
         </div>
@@ -71,10 +79,15 @@ $this->load->helper("url");
             <div class="plus"></div>
         </div>
     </div>
+    <div id="paper-textarea">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
 </body>
 <script src="<?php echo base_url(); ?>assets/js/paper.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/hider.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/structure.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/search.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/task.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/sideNavbar.js"></script>
 
 </html>

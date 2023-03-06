@@ -61,7 +61,6 @@ function setUpSize() {
 function closeAllOpenUnderLink() {
   let rows = document.querySelectorAll(".row-nav");
   rows.forEach((row) => {
-    console.log(row);
     if (row.children[1] != undefined) {
       desactiveUnderLink(row);
     }
@@ -126,7 +125,6 @@ function setUpUnderLinks() {
     let top = underlink.parentElement.parentElement.firstElementChild;
     underlink.addEventListener("click", () => {
       rearrageactiveUnderLink(top);
-      console.log("EToo");
 
       underlink.classList.add("active-underLink");
       desactiveActiveUnderLink(underlink);
@@ -211,7 +209,6 @@ function rearrageactiveRow() {
           row2.classList.remove("row-active");
           if (row2.parentElement.children[1] != undefined) {
             if (row2 != row) {
-              console.log("EToo");
               desactiveUnderLink(row2.parentElement);
             }
             // }

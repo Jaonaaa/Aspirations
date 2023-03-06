@@ -2,6 +2,31 @@
 let dataList = ["Profil", "Thème", "Déconnexion"];
 setUpAdder();
 setUpParams();
+setUpContainer();
+//structure max height
+
+function setUpContainer() {
+  let header = +getComputedStyle(
+    document.getElementById("header")
+  ).height.replace("px", "");
+  let rowTicket = +getComputedStyle(
+    document.getElementById("rows-tickets")
+  ).height.replace("px", "");
+  let mainContainer = document.getElementById("data-container");
+  //
+  let windowHeight = window.innerHeight;
+  //
+  let maxHeight = windowHeight - (header + rowTicket);
+  mainContainer.style.maxHeight = maxHeight + "px";
+  window.addEventListener("resize", () => {
+    header = document.getElementById("header").getBoundingClientRect().height;
+    rowTicket = document
+      .getElementById("rows-tickets")
+      .getBoundingClientRect().height;
+    maxHeight = windowHeight - (header + rowTicket);
+    mainContainer.style.maxHeight = maxHeight + "px";
+  });
+}
 
 ///
 function setUpParams() {
@@ -84,6 +109,11 @@ function getBtnSomething(btnSomething) {
     btnElement.classList.add("btn-something");
     btnElement.innerHTML += `<i class="${btn.icon}"></i>`;
     root.appendChild(btnElement);
+    //
+    btnElement.addEventListener("click", () => {
+      console.log(btn.icon);
+    });
+    //
     setTimeout(() => {
       btnElement.style.transform = `translateY(-${transformY}rem)`;
       transformY += 4;
