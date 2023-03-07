@@ -35,7 +35,7 @@ $this->load->helper("url");
     <div id="root">
         <!-- //// -->
         <div id="header">
-            <div id="logo"><img src="<?php echo base_url(); ?>assets/img/logo/logo.png" alt="logo"></div>
+            <div id="logo"><img src="<?php echo base_url(); ?>assets/img/logo/logo1.png" alt="logo"></div>
             <div class="search-bar">
                 <input type="text" placeholder="Rechercher une tache">
                 <div class="icon-search"><i class="fas fa-search"></i></div>
@@ -46,7 +46,7 @@ $this->load->helper("url");
                     <div class="icon-parameter"> <i class="fas fa-cog"></i> </div>
                 </div>
                 <div id="users-box">
-                    <div class="avatar-box"> <img src="<?php echo base_url(); ?>assets/img/logo/logo.png" alt="avatar">
+                    <div class="avatar-box"> <img src="<?php echo base_url(); ?>assets/img/face2.jpg" alt="avatar">
                     </div>
                     <div class="user-name">Peter Parker Samy </div>
                 </div>
@@ -80,7 +80,12 @@ $this->load->helper("url");
         </div>
     </div>
 
+
 </body>
+<script>
+    var base_url = "<?php echo base_url(); ?>";
+</script>
+<script src="<?php echo base_url(); ?>assets/js/utilities.js"></script>
 <script src=" <?php echo base_url(); ?>assets/js/paper.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/hider.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/structure.js"></script>

@@ -1,5 +1,6 @@
 :root {
   --theme-one: rgb(216, 136, 48);
+  --theme-one-hovered: rgb(192, 107, 17);
   --theme-two: #d8f020;
   --theme-two-hovered: #c4de00;
 }
@@ -36,7 +37,7 @@ body::-webkit-scrollbar {
 #logo {
   margin-left: 1rem;
   align-self: center;
-  width: 9rem;
+  width: 10rem;
   margin-top: -0.8rem;
   display: flex;
   overflow: hidden;
@@ -46,7 +47,7 @@ body::-webkit-scrollbar {
 }
 #logo img {
   width: 100%;
-  height: 9rem;
+  height: 10rem;
 }
 
 .search-bar {

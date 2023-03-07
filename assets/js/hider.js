@@ -13,6 +13,7 @@ function createHider() {
   }, 20);
   hider.addEventListener("click", () => {
     removeNavbar();
+    removeTaskFinalizer();
   });
 }
 

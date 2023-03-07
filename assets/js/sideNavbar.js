@@ -6,7 +6,7 @@ data = [
   },
   {
     name: " Catégories",
-    icon: "fas fa-tree",
+    icon: "fas fa-shapes",
     underlinks: [
       {
         name: "Sport",
@@ -26,6 +26,11 @@ data = [
     name: " Agenda",
     icon: "fas fa-calendar-alt",
     linkTo: "agenda",
+  },
+  {
+    name: "Statistiques",
+    icon: "fas fa-chart-bar",
+    linkTo: "stat",
   },
 ];
 /// auto set
