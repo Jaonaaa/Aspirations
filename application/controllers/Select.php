@@ -29,9 +29,9 @@ class Select extends CI_Controller
     public function gettaskperday($date)
     {
         //$this->session->userdata("iduser")
-        $data = $this->Tache->getAllTaches(1);
+        $data = $this->Tache->gettachePerJour(1,$date);
         foreach ($data as $task) {
-            $task['sousTaches'] = $this->Tache->gettachePerJour(1,$date);
+            $task['sousTaches'] = $this->Tache->getsoustachebytache($task['idtache']);
         }
         echo json_encode($data);
     }
