@@ -10,9 +10,10 @@ class Insert extends CI_Controller
 
         $id = $this->Tache->insertiontache($data, 1);
         foreach ($data->pics as $pic) {
-            $this->Tache->insertionimage($id, $pic->picPath);
+            $this->Tache->insertionimage($id, $pic);
         }
         $this->Tache->insertionsoustache($data->sousTaches, $id);
+        echo json_encode(array("status" => "good"));
     }
 
 

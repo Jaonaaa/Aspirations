@@ -47,5 +47,19 @@ class Tache extends CI_Model
         $data = array('idtache' => $id, 'pic' => $path);
         $str = $this->db->insert('pic', $data);
     }
+    public function getfirsttache(){
+        $obj = array();
+        $query = "select * from sous_tache where idtache = %s order by idsous_tache asc limit 1";
+        $result = $this->db->query(sprintf($query, $idtache));
+        $row= $result->row()
+        return $row;
+    }
+    public function getlasttache(){
+        $obj = array();
+        $query = "select * from sous_tache where idtache = %s order by idsous_tache desc limit 1";
+        $result = $this->db->query(sprintf($query, $idtache));
+        $row= $result->row()
+        return $row;
+    }
 
 }
