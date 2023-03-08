@@ -186,20 +186,20 @@ input[type="file"] {
   transform: scale(1.1);
 }
 .pinkMe {
-  background-color: rgb(252, 116, 116);
+  background-color: rgb(252, 116, 116) !important;
 }
 
 .blueMe {
-  background-color: rgb(0, 169, 202);
+  background-color: rgb(0, 169, 202) !important;
 }
 .orangeMe {
-  background-color: rgb(255, 191, 96);
+  background-color: rgb(255, 191, 96) !important;
 }
 .greenMe {
-  background-color: rgb(107, 250, 114);
+  background-color: rgb(107, 250, 114) !important;
 }
 .purpleMe {
-  background-color: rgb(218, 83, 255);
+  background-color: rgb(218, 83, 255) !important;
 }
 .footer-specification {
   display: flex;

@@ -53,7 +53,7 @@ class Tache extends CI_Model
 
     public function getAllTaches($idUser)
     {
-        $sql = "SELECT * from tache join sous_tache on tache.idtache = sous_tache.idtache WHERE tache.iduser = %s LIMIT 10";
+        $sql = "SELECT * from tache WHERE tache.iduser = %s ORDER BY idTache DESC LIMIT 10";
         $sql = sprintf($sql, $this->db->escape($idUser));
         $query = $this->db->query($sql);
 
@@ -64,6 +64,7 @@ class Tache extends CI_Model
             $objets["nom"] = $row["nom"];
             $objets["details"] = $row["details"];
             $objets['couleur'] = $row['couleur'];
+            $objets["categorie"] = $row['categorie'];
             $objets["importance"] = $row['idstatus'];
             $objets['sous_tache'] = $this->getsoustachebytache($row['idtache']);
             $objets['etat'] = $row['etat'];

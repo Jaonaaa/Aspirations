@@ -464,7 +464,6 @@ function removePaperTasks(paper) {
 function sendTask(data) {
   let xhr = getTheBoy();
   let formData = new FormData();
-  let paper = document.getElementById("paper-textarea");
   formData.append("task", JSON.stringify(data));
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
@@ -475,7 +474,13 @@ function sendTask(data) {
         } else {
           createSidePopUp("Tache enregistré", "good");
           removeNavbar();
-          removePaperTasks(paper);
+          // remove the paper
+          let paper = document.getElementById("paper-textarea");
+          paper.style.transform = "";
+          setTimeout(() => {
+            paper.parentNode.removeChild(paper);
+          }, 200);
+          //
         }
       } else {
         console.log(xhr.status);

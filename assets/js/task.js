@@ -66,20 +66,40 @@ function sectionRow(tasks, titleSection) {
   return sectionContainer;
 }
 
+function getTextCategory(id) {
+  return categoriesData[+id - 1].nom;
+}
+
+function getColor(id) {
+  id = +id;
+  if (id == 1) {
+    return "pinkMe";
+  } else if (id == 2) {
+    return "greenMe";
+  } else if (id == 3) {
+    return "purpleMe";
+  } else if (id == 4) {
+    return "blueMe";
+  } else if (id == 5) {
+    return "orangeMe";
+  }
+}
+
 function createTaskBox(task) {
   let box = document.createElement("div");
   box.classList.add("task-container");
-  //header
+  //header);
   box.innerHTML = `
   <div class="header-task-container">
-        <div class="title-task">${task.title}</div>
-        <div class="category-task" style="background-color:${task.bgcolor}">${task.category} </div>
+        <div class="title-task">${task.nom}</div>
+        <div class="category-task ${getColor(task.couleur)}" 
+        >${getTextCategory(task.categorie)} </div>
   </div>
   `;
   //body
   box.innerHTML += `
   <div class="body-task">
-  ${task.content}
+  ${task.details}
     </div>
   `;
   // footer
@@ -91,7 +111,7 @@ function createTaskBox(task) {
         </div>
         <div class="progression-task">
             <div class="progres-bar"></div>
-            <div class="text-progress">${task.progression} %</div>
+            <div class="text-progress">${task.etat} %</div>
         </div>
     </div>
   `;
