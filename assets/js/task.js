@@ -1,54 +1,12 @@
-let taskData = [
-  {
-    title: "Wallet App Design",
-    category: "Design",
-    content: "Lorem ipsum lor de le por",
-    dateBegin: "4 Jun 2:34",
-    dateEnd: "4 Jun 5:34",
-    progression: 46,
-    // red pink
-    bgcolor: " rgb(250, 130, 130)",
-  },
-  {
-    title: "School Homework ",
-    category: "School",
-    content: "Lorem ipsum lor de le por",
-    dateBegin: "4 Jun 2:34",
-    dateEnd: "4 Jun 5:34",
-    progression: 46,
-    // blue animé
-    bgcolor: "rgb(0, 163, 212)",
-  },
-  {
-    title: "Friends Trip",
-    category: "Loisir",
-    content: "Lorem ipsum lor de le por",
-    dateBegin: "4 Jun 2:34",
-    dateEnd: "4 Jun 5:34",
-    progression: 76,
-    // vert calme
-    bgcolor: " rgb(0, 212, 0)",
-  },
-  {
-    title: "Laver la voiture",
-    category: "Corvée",
-    content: "Lorem ipsum lor de le por",
-    dateBegin: "4 Jun 2:34",
-    dateEnd: "4 Jun 5:34",
-    progression: 46,
-    // orange
-    bgcolor: "rgb(255, 179, 0)",
-  },
-];
-getAllTask();
-
+// getAllTask() loaded after categroeis
+//dataTask
+var dataTasksGlobale = undefined;
 /**
  *
  * @param {Array} tasks
  * @param {String} titleSection
  */
 function sectionRow(tasks, titleSection) {
-  console.log(tasks);
   let sectionContainer = document.createElement("div");
   sectionContainer.classList.add("section-container");
   //
@@ -126,8 +84,15 @@ function getAllTask() {
         if (retour.status == "error") {
         } else {
           console.log(retour);
-          let main = document.getElementById("data-container");
-          main.appendChild(sectionRow(retour, "Plus récent"));
+          dataTasksGlobale = retour;
+          switchContainer(
+            createHeaderMainContainer("Mes Taches", "0"),
+            sectionRow(retour, "Plus récent")
+          );
+          //
+          setTimeout(() => {
+            setUpTask();
+          }, 300);
         }
       } else {
         console.log(xhr.status);
@@ -140,4 +105,33 @@ function getAllTask() {
   });
   xhr.open("POST", `${base_url}index.php/Select/getAllTask`, true);
   xhr.send(null);
+}
+function createHeaderMainContainer(title, btn) {
+  //for btn find the best way to swicth it
+  //
+  let header = document.createElement("div");
+  header.classList.add("head-section");
+  header.innerHTML = `
+    <div class="title-section">${title}</div>
+    <div class="support-section">
+        <div class="name-support">Filtrer</div>
+        <div class="icon-support icon-parameter"> <i class="fas fa-filter"></i> </div>
+    </div>
+  `;
+  return header;
+}
+
+function setUpTask() {
+  let tasksContainers = document.querySelectorAll(".task-container");
+  tasksContainers.forEach((task, index) => {
+    task.setAttribute("indexation", index);
+    task.addEventListener("click", showDataTask);
+  });
+}
+function showDataTask() {
+  let index = +this.getAttribute("indexation");
+  switchContainer(
+    createHeaderMainContainer("Détails tache", "0"),
+    buildDetails(dataTasksGlobale[index])
+  );
 }

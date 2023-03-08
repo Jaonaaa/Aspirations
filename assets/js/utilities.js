@@ -46,9 +46,23 @@ function getAllcategories() {
   xhr.send(null);
 }
 
-function switchContainer() {
+/**
+ *
+ * @param {HTMLElement} header
+ * @param {HTMLElement} content
+ */
+function switchContainer(header, content) {
   let container = document.getElementById("main-container");
+  let dataContainer = document.createElement("div");
+  dataContainer.setAttribute("id", "data-container");
   container.style.opacity = 0;
+  setTimeout(() => {
+    container.innerHTML = "";
+    container.appendChild(header);
+    dataContainer.appendChild(content);
+    container.appendChild(dataContainer);
+    setUpContainer();
+  }, 200);
   setTimeout(() => {
     container.style.opacity = 1;
   }, 300);

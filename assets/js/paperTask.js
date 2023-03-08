@@ -481,6 +481,8 @@ function sendTask(data) {
             paper.parentNode.removeChild(paper);
           }, 200);
           //
+          getAllTask();
+          //
         }
       } else {
         console.log(xhr.status);

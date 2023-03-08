@@ -2,7 +2,6 @@
 let dataList = ["Profil", "Thème", "Déconnexion"];
 setUpAdder();
 setUpParams();
-setUpContainer();
 //structure max height
 
 function setUpContainer() {

@@ -18,6 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/task.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/hider.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/PopUp.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/detailsTask.css">
 
 </head>
 <style>
@@ -66,17 +67,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <div id="structure">
             <div id="main-container">
 
-                <div class="head-section">
-                    <div class="title-section">Mes taches</div>
-                    <div class="support-section">
-                        <div class="name-support">Filtrer</div>
-                        <div class="icon-support icon-parameter"> <i class="fas fa-filter"></i> </div>
-                    </div>
-                </div>
-                <div id="data-container">
-
-                </div>
-
             </div>
         </div>
         <div id="btn-add-something">
@@ -100,5 +90,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <script src="<?php echo base_url(); ?>assets/js/paperTask.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/task.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/sideNavbar.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/detailsTask.js"></script>
 
 </html>

@@ -40,7 +40,9 @@ setTimeout(() => {
   setUpNavbar();
   setUpSize();
   document.body.style.opacity = 1;
-}, 200);
+  //
+  getAllTask();
+}, 220);
 //
 
 var activeTab = undefined;
@@ -89,9 +91,17 @@ function paging() {
     let target = link.getAttribute("target");
     link.addEventListener("click", () => {
       activeTab = target;
-      createPaper(link, "right", 0);
+      console.log(target);
+      goTo(activeTab);
+      // createPaper(link, po, "right");
     });
   });
+}
+
+function goTo(link) {
+  if (link == "tasks") {
+    getAllTask();
+  }
 }
 function organiseUnderLink() {
   let rows = document.querySelectorAll(".row-nav");

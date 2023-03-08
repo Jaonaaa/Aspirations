@@ -1,0 +1,120 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-family: Poppins;
+  transition: all 0.2s ease-in-out;
+}
+.box-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 15rem;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: start;
+  transition: all 0.2s ease-in-out;
+  width: auto;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.353);
+}
+.header-details {
+  display: flex;
+  width: auto;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
+}
+.title-task-details {
+  font-size: 1.5rem;
+  color: rgb(83, 81, 81);
+  transition: all 0.2s ease-in-out;
+}
+.mark-details {
+  display: flex;
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem;
+  justify-content: space-around;
+}
+.rect-mark {
+  border-radius: 0.3rem;
+  padding: 0.25rem 0.45rem;
+  background-color: rgb(184, 117, 35);
+  color: white;
+  font-size: 0.8rem;
+  transition: all 0.2s ease-in-out;
+  margin: 0 0.3rem;
+}
+.progression-details {
+  height: 3rem;
+  width: 3rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+  border: 1px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.date-details-task {
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.9rem;
+  color: grey;
+  transition: all 0.2s ease-in-out;
+}
+.details-text {
+  margin-top: 1rem;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.85rem;
+}
+.status-sousTache-details {
+  width: 2.1rem;
+  height: 2.1rem;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-good {
+  background-color: rgb(4, 171, 4);
+}
+.status-notFinished {
+  background-color: rgb(160, 160, 160);
+}
+.btn-to-confirm {
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: rgb(4, 171, 4);
+}
+.btn-to-confirm:hover {
+  background-color: rgb(1, 130, 1);
+}
+
+@media screen and (max-width: 768px) {
+  .title-task-details {
+    font-size: 1.22rem;
+  }
+  .rect-mark {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+  }
+  .progression-details {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 0.9rem;
+  }
+  .date-details-task {
+    font-size: 0.8rem;
+  }
+  .details-text {
+    font-size: 0.8rem;
+  }
+}

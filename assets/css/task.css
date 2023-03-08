@@ -10,6 +10,7 @@
   transition: all 0.2s ease-in-out;
   margin-right: 3rem;
   margin-left: 0.3rem;
+  cursor: pointer;
   margin-bottom: 3rem;
   align-self: center;
   overflow: hidden;
