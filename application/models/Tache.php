@@ -82,8 +82,7 @@ class Tache extends CI_Model
             array_push($obj, $row);
         }
         return $obj;
-=======
->>>>>>> f58a498a057cd7c9a1a2a50bf5ebcec162c53cf5
+
     }
 
 }
