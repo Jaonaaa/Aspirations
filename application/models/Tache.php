@@ -54,15 +54,25 @@ class Tache extends CI_Model
         $obj = array();
         $query = "select * from sous_tache where idtache = %s order by idsous_tache asc limit 1";
         $result = $this->db->query(sprintf($query, $idtache));
-        $row= $result->row()
-        return $row;
+        $row= $result->row();
+        if($row == null){
+            return '';
+        }else{
+            return $row;
+        }
+       
     }
     public function getlasttache(){
         $obj = array();
         $query = "select * from sous_tache where idtache = %s order by idsous_tache desc limit 1";
         $result = $this->db->query(sprintf($query, $idtache));
-        $row= $result->row()
-        return $row;
+        $row= $result->row();
+        if($row == null){
+            return '';
+        }else{
+            return $row;
+        }
+      
     }
 
     public function getAllTaches($idUser)
@@ -86,6 +96,30 @@ class Tache extends CI_Model
             array_push($array, $objets);
         }
         return $array;
+    }
+    public function gettachePerJour($idUser,$date)
+    {
+        if(strtotime($date)!=null){
+            $sql = "SELECT * from tache WHERE tache.iduser = %s and jour=%s";
+            $sql = sprintf($sql, $this->db->escape($idUser,$date));
+            $query = $this->db->query($sql);
+            $array = array();
+            foreach ($query->result_array() as $row) {
+                $objets = array();
+                $objets['idtache'] = $row['idtache'];
+                $objets["nom"] = $row["nom"];
+                $objets["details"] = $row["details"];
+                $objets['couleur'] = $row['couleur'];
+                $objets["categorie"] = $row['categorie'];
+                $objets["importance"] = $row['idstatus'];
+                $objets['sous_tache'] = $this->getsoustachebytache($row['idtache']);
+                $objets['etat'] = $row['etat'];
+                $objets["pics"] = $this->getPicByTache($row["idtache"]);
+                array_push($array, $objets);
+            }
+            return $array;
+        }
+
     }
 
     public function getPicByTache($idtache)
