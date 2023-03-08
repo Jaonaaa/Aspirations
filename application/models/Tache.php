@@ -36,15 +36,16 @@ class Tache extends CI_Model
     {
         $data = array('nom' => $tache->nom, 'iduser' => $id, 'details' => $tache->details, 'couleur' => $tache->couleur, 'categorie' => $tache->categorie, 'idstatus' => $tache->idstatus);
         $str = $this->db->insert('tache', $data);
-        $this->db->select_max('idtache');
-        $id = $this->db->get('tache');
-        return $id;
+        
+       $query =  $this->db->query('select max(idtache) as id from tache ');
+        $row = $query->row();
+        return $row->id;
     }
 
     public function insertionimage($id, $path)
     {
-        $data = array('idtache' => $id, 'picture' => $path);
-        $str = $this->db->insert_string('sous_tache', $data);
+        $data = array('idtache' => $id, 'pic' => $path);
+        $str = $this->db->insert('pic', $data);
     }
 
 }
