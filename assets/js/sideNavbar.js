@@ -34,9 +34,13 @@ data = [
   },
 ];
 /// auto set
+data[1].underlinks = categoriesData;
 buildNavbar(data);
 setUpNavbar();
 setUpSize();
+
+//
+
 var activeTab = undefined;
 
 //Functions resize
@@ -246,6 +250,9 @@ function buildNavbar(datas) {
   structure.prepend(navbar);
   // for another time
   //return navbar;
+  //first link defaulted active
+  let row = document.querySelector(".top-content-row");
+  row.classList.add("row-active");
 }
 
 function buildRowNav(data) {
@@ -288,7 +295,7 @@ function addUnderLinks(data) {
   row.classList.add("link");
   row.setAttribute("target", data.linkTo);
   row.innerHTML = `
-    <div class="under-target" >${data.name}</div>
+    <div class="under-target" >${data.nom}</div>
     `;
   return row;
 }

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-$this->load->helper("url");
+// $this->load->helper("url");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +17,7 @@ $this->load->helper("url");
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/paper.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/task.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/hider.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/PopUp.css">
 
 </head>
 <style>
@@ -31,6 +32,8 @@ $this->load->helper("url");
     }
 </style>
 
+</script>
+
 <body>
     <div id="root">
         <!-- //// -->
@@ -42,8 +45,8 @@ $this->load->helper("url");
             </div>
             <div id="params">
                 <div id="parameter-box">
-                    <div class="icon-parameter"> <i class="fas fa-bell"></i> </div>
-                    <div class="icon-parameter"> <i class="fas fa-cog"></i> </div>
+                    <div class="icon-parameter" id="btn-notification"> <i class="fas fa-bell"></i> </div>
+                    <div class="icon-parameter" id="btn-setting"> <i class="fas fa-cog"></i> </div>
                 </div>
                 <div id="users-box">
                     <div class="avatar-box"> <img src="<?php echo base_url(); ?>assets/img/face2.jpg" alt="avatar">
@@ -84,10 +87,13 @@ $this->load->helper("url");
 </body>
 <script>
     var base_url = "<?php echo base_url(); ?>";
+    var categoriesData = undefined;
 </script>
 <script src="<?php echo base_url(); ?>assets/js/utilities.js"></script>
-<script src=" <?php echo base_url(); ?>assets/js/paper.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/PopUp.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/paper.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/hider.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/UploadFile.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/structure.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/search.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/paperTask.js"></script>

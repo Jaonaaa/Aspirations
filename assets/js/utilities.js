@@ -1,3 +1,10 @@
+/**
+ *
+ * Automatic
+ */
+getAllcategories();
+
+//
 function getTheBoy() {
   let xhr;
   try {
@@ -16,18 +23,17 @@ function getTheBoy() {
   return xhr;
 }
 
-function sendData(data) {
+function getAllcategories() {
   let xhr = getTheBoy();
-  let formData = new FormData();
-  let dataJson = JSON.stringify(data);
-  formData.append("data", dataJson);
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
         var retour = JSON.parse(xhr.responseText);
-        console.log(retour);
+
         if (retour.status == "error") {
         } else {
+          console.log(retour);
+          categoriesData = retour;
         }
       } else {
         console.log(xhr.status);
@@ -38,6 +44,14 @@ function sendData(data) {
   xhr.addEventListener("error", function (event) {
     alert("Oups! Quelque chose s'est mal passé lors de la publication .");
   });
-  xhr.open("POST", `${base_url}index.php/Home/getData`, true);
-  xhr.send(formData);
+  xhr.open("POST", `${base_url}index.php/Select/getallcategories`, true);
+  xhr.send(null);
+}
+
+function switchContainer() {
+  let container = document.getElementById("main-container");
+  container.style.opacity = 0;
+  setTimeout(() => {
+    container.style.opacity = 1;
+  }, 300);
 }

@@ -6,6 +6,7 @@
 }
 body {
   margin: 0;
+  transition: all 0.2s ease-in-out;
   padding: 0;
   overflow: hidden;
 }
@@ -39,6 +40,7 @@ body::-webkit-scrollbar {
   align-self: center;
   width: 10rem;
   margin-top: -0.8rem;
+  margin-bottom: -0.5rem;
   display: flex;
   overflow: hidden;
   height: 3rem;

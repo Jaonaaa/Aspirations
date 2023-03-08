@@ -117,7 +117,7 @@ input[type="file"] {
 }
 .title-specification {
   font-family: Poppins;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin: 0.5rem 0rem 1rem 0.5rem;
 }
 .input-spec {
@@ -161,7 +161,25 @@ input[type="file"] {
   height: 2.5rem;
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
   transition: all 0.2s ease-in-out;
+}
+
+.bull-color::before {
+  content: "";
+  right: -15%;
+  position: absolute;
+  top: -15%;
+  width: 0;
+  height: 0;
+  transition: all 0.2s ease-in-out;
+}
+.selected-bull::before {
+  width: 1rem;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  height: 1rem;
+  background-color: var(--theme-two);
 }
 
 .bull-color:hover {
@@ -195,6 +213,7 @@ input[type="file"] {
   margin-left: auto;
   border-radius: 1.2rem;
   color: white;
+  margin-right: 0.5rem;
   font-family: Poppins;
   padding: 0.4rem 1.1rem;
   transition: all 0.2s ease-in-out;
