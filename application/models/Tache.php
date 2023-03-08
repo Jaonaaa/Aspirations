@@ -116,6 +116,8 @@ class Tache extends CI_Model
                 $objets['etat'] = $row['etat'];
                 $objets["pics"] = $this->getPicByTache($row["idtache"]);
                 array_push($array, $objets);
+            }else{
+                throw new Exception('not a date');
             }
             return $array;
         }
