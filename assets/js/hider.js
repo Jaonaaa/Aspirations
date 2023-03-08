@@ -13,12 +13,12 @@ function createHider() {
   }, 20);
   hider.addEventListener("click", () => {
     removeNavbar();
-    removeTaskFinalizer();
   });
 }
 
 function removeNavbar() {
   let hider = document.getElementById("hider");
+  removeTaskFinalizer();
   if (hider != undefined) {
     hider.style.opacity = 0;
     setTimeout(() => {

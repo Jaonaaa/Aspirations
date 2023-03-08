@@ -36,15 +36,51 @@ class Tache extends CI_Model
     {
         $data = array('nom' => $tache->nom, 'iduser' => $id, 'details' => $tache->details, 'couleur' => $tache->couleur, 'categorie' => $tache->categorie, 'idstatus' => $tache->idstatus);
         $str = $this->db->insert('tache', $data);
-        $this->db->select_max('idtache');
-        $id = $this->db->get('tache');
-        return $id;
+        //$id = $this->db->select_max('idtache');
+        // $id = $this->db->get('tache');
+        $sql = "SELECT MAX(idTache) as idMax FROM Tache";
+        $query = $this->db->query($sql);
+        $row = $query->row_array();
+        return $row['idmax'];
     }
 
     public function insertionimage($id, $path)
     {
-        $data = array('idtache' => $id, 'picture' => $path);
-        $str = $this->db->insert_string('sous_tache', $data);
+        $data = array('idtache' => $id, 'pic' => $path);
+        $str = $this->db->insert('pic', $data);
+    }
+
+    public function getAllTaches($idUser)
+    {
+        $sql = "SELECT * from tache join sous_tache on tache.idtache = sous_tache.idtache WHERE tache.iduser = %s LIMIT 10";
+        $sql = sprintf($sql, $this->db->escape($idUser));
+        $query = $this->db->query($sql);
+
+        $array = array();
+        foreach ($query->result_array() as $row) {
+            $objets = array();
+            $objets['idtache'] = $row['idtache'];
+            $objets["nom"] = $row["nom"];
+            $objets["details"] = $row["details"];
+            $objets['couleur'] = $row['couleur'];
+            $objets["importance"] = $row['idstatus'];
+            $objets['sous_tache'] = $this->getsoustachebytache($row['idtache']);
+            $objets['etat'] = $row['etat'];
+            $objets["pics"] = $this->getPicByTache($row["idtache"]);
+            array_push($array, $objets);
+        }
+        return $array;
+    }
+
+    public function getPicByTache($idtache)
+    {
+        $obj = array();
+        $query = "select * from pic where idtache = %s ";
+        $result = $this->db->query(sprintf($query, $idtache));
+        foreach ($result->result_array() as $row) {
+            array_push($obj, $row);
+        }
+        return $obj;
     }
 
 }

@@ -1,19 +1,23 @@
 var imagePath = "";
 
-function saveImage(file) {
+/**
+ *
+ * @param {*} file
+ * @param {Array} pics
+ */
+function saveImage(file, pics) {
   let xhr = getTheBoy();
   let formData = new FormData();
   formData.append("fileToUpload", file);
-  console.log("hello");
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
         var retour = JSON.parse(xhr.responseText);
-        // removeLoading(loading, blocks);
         if (retour.status == "error") {
           createSidePopUp(retour.detail, "error");
         } else {
-          createSidePopUp("Uploaded", "good");
+          createSidePopUp(base_url + retour.img, "image");
+          pics.push(retour.img);
         }
       } else {
         console.log(xhr.status);

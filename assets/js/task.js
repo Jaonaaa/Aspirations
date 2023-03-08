@@ -40,15 +40,15 @@ let taskData = [
     bgcolor: "rgb(255, 179, 0)",
   },
 ];
+getAllTask();
 
-let main = document.getElementById("data-container");
-main.appendChild(sectionRow(taskData, "Aujourd'hui"));
 /**
  *
  * @param {Array} tasks
  * @param {String} titleSection
  */
 function sectionRow(tasks, titleSection) {
+  console.log(tasks);
   let sectionContainer = document.createElement("div");
   sectionContainer.classList.add("section-container");
   //
@@ -96,4 +96,28 @@ function createTaskBox(task) {
     </div>
   `;
   return box;
+}
+function getAllTask() {
+  let xhr = getTheBoy();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        var retour = JSON.parse(xhr.responseText);
+        if (retour.status == "error") {
+        } else {
+          console.log(retour);
+          let main = document.getElementById("data-container");
+          main.appendChild(sectionRow(retour, "Plus récent"));
+        }
+      } else {
+        console.log(xhr.status);
+      }
+    }
+  };
+
+  xhr.addEventListener("error", function (event) {
+    alert("Oups! Quelque chose s'est mal passé lors de la publication .");
+  });
+  xhr.open("POST", `${base_url}index.php/Select/getAllTask`, true);
+  xhr.send(null);
 }
