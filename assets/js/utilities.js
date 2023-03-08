@@ -22,14 +22,12 @@ function getTheBoy() {
   }
   return xhr;
 }
-
 function getAllcategories() {
   let xhr = getTheBoy();
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
         var retour = JSON.parse(xhr.responseText);
-
         if (retour.status == "error") {
         } else {
           console.log(retour);

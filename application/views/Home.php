@@ -51,7 +51,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div id="users-box">
                     <div class="avatar-box"> <img src="<?php echo base_url(); ?>assets/img/face2.jpg" alt="avatar">
                     </div>
-                    <div class="user-name">Peter Parker Samy </div>
+                    <div class="user-name">Peter Parker Spiderman </div>
                 </div>
             </div>
             <div id="bars-menu">
@@ -65,6 +65,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <!-- -->
         <div id="structure">
             <div id="main-container">
+
                 <div class="head-section">
                     <div class="title-section">Mes taches</div>
                     <div class="support-section">
@@ -75,8 +76,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <div id="data-container">
 
                 </div>
-            </div>
 
+            </div>
         </div>
         <div id="btn-add-something">
             <div class="plus"></div>

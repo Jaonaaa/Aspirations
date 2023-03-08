@@ -34,11 +34,13 @@ data = [
   },
 ];
 /// auto set
-data[1].underlinks = categoriesData;
-buildNavbar(data);
-setUpNavbar();
-setUpSize();
-
+setTimeout(() => {
+  data[1].underlinks = categoriesData;
+  buildNavbar(data);
+  setUpNavbar();
+  setUpSize();
+  document.body.style.opacity = 1;
+}, 200);
 //
 
 var activeTab = undefined;

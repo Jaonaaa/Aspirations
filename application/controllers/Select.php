@@ -17,4 +17,11 @@ class Select extends CI_Controller
         echo json_encode($data);
     }
 
+    public function getAllTask()
+    {
+        //$this->session->userdata("iduser")
+        $data = $this->Tache->getAllTaches(1);
+        echo json_encode($data);
+    }
+
 }

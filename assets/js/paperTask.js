@@ -438,12 +438,11 @@ function setUpImageDownloader() {
   let compteurBox = document.getElementById("nbr-image-down");
   var compteur = 0;
   btn_img.addEventListener("input", () => {
-    createSidePopUp(base_url + "assets/img/face.jpg", "image");
     compteur++;
     compteurBox.style.display = "flex";
     compteurBox.innerHTML = compteur;
     //file
-    saveImage(btn_img.files[0]);
+    saveImage(btn_img.files[0], tasksGlobale.pics);
     //
   });
 }
@@ -470,11 +469,18 @@ function sendTask(data) {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
         var retour = JSON.parse(xhr.responseText);
-        // removeLoading(loading, blocks);
         if (retour.status == "error") {
           createSidePopUp(retour.detail, "error");
         } else {
-          createSidePopUp("Uploaded", "good");
+          createSidePopUp("Tache enregistré", "good");
+          removeNavbar();
+          // remove the paper
+          let paper = document.getElementById("paper-textarea");
+          paper.style.transform = "";
+          setTimeout(() => {
+            paper.parentNode.removeChild(paper);
+          }, 200);
+          //
         }
       } else {
         console.log(xhr.status);
