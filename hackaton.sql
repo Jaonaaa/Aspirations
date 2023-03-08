@@ -46,7 +46,7 @@ create table pic(
 	idtache int references tache (idtache) ,
 	pic varchar(40)
 );
-insert into tache values(default, 'corvee' ,default , 2 , 'corvee' , 'red' , 1 , 0) ; 
+insert into tache values(default, 'corvee' , 2 ,default , 'corvee' , 'red' , 1 , 0) ; 
 create table sous_tache(
     idsous_tache serial primary key ,
 	nom varchar(20),        
