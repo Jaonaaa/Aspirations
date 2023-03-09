@@ -135,5 +135,9 @@ class Tache extends CI_Model
         return $obj;
 
     }
+    public function endofsoustask($idtask){
+        $data =  array('fin'=>date("Y-m-d H:i:s"));
+        $this->db->update('sous_tache',$data,array('idsous_tache'=>$idtask));
+    }
 
 }
